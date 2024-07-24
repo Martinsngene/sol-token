@@ -1,6 +1,6 @@
 // Nav Links
 export const navLinks = [
+  { name: "How It Works", link: "/" },
   { name: "Features", link: "/" },
-  { name: "Solutions", link: "/" },
-  { name: "Pricing", link: "/" },
+  { name: "Docs", link: "/" },
 ];

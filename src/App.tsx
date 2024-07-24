@@ -14,15 +14,9 @@ import { useState } from "react";
 import * as buffer from "buffer";
 window.Buffer = buffer.Buffer;
 
-//
 import "./App.css";
-import HandLight from "./assets/hand_light.svg";
-// import HandDark from "./assets/hand_dark.svg";
-import ArrowLight from "./assets/arrow_light.svg";
-// import ArrowDark from "./assets/arrow_dark.svg";
-import Star from "./assets/star.svg";
-import NavBar from "./NavBar";
-import Button from "./components/Button";
+import NavBar from "./components/NavBar";
+import Home from "./components/Home";
 
 function App() {
   // create types
@@ -344,47 +338,9 @@ function App() {
   };
 
   return (
-    <div className="h-[100vh]">
+    <div className="font-mono">
       <NavBar />
-      <main className="flex items-center justify-center">
-        <div className="w-[473px] relative">
-          <div>
-            {/* Header Text */}
-            <h1 className="text-[4rem] font-extrabold">
-              Now <br /> <span className="text-[#55C8ED]">Everyone</span> Can
-              Participate.
-            </h1>
-            {/* Mission Text */}
-            <p className="text-[1.5rem]">
-              Evolve your blockchain products with <br />
-              our amazing DAO infrastructure
-            </p>
-          </div>
-          {/* Star */}
-          <img
-            className="absolute top-[-1.5rem] left-[12rem]"
-            width={74}
-            src={Star}
-            alt="star"
-          />
-          {/* Arrow */}
-          <img
-            className="absolute bottom-[-5rem] right-[-1rem]"
-            width={200}
-            src={ArrowLight}
-            alt="star"
-          />
-          {/* Buttons */}
-          <div>
-            <Button>Get Started</Button>
-            <Button>Watch Video</Button>
-          </div>
-        </div>
-        {/* Hand */}
-        <div>
-          <img width={690} src={HandLight} alt="hand" />
-        </div>
-      </main>
+      <Home />
     </div>
   );
 }

@@ -1,10 +1,10 @@
 import Logo from "./Logo";
-import Button from "./components/Button";
-import { navLinks } from "./components/constants";
+import Button from "./Button";
+import { navLinks } from "./constants";
 
 const NavBar = () => {
   return (
-    <nav className="nav">
+    <nav className="nav max-w-[1440px]">
       <Logo />
       <ul className="w-[30%] flex items-center justify-between">
         {navLinks.map((link: any, index: number) => {
@@ -19,7 +19,7 @@ const NavBar = () => {
           );
         })}
       </ul>
-      <Button>Connect Wallet</Button>
+      <Button className="button-3d">Connect Wallet</Button>
     </nav>
   );
 };
