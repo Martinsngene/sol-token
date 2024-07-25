@@ -1,12 +1,17 @@
 import HandLight from "../assets/hand_light.svg";
-// import HandDark from "../assets/hand_dark.svg";
+import HandDark from "../assets/hand_dark.svg";
 import ArrowLight from "../assets/arrow_light.svg";
-// import ArrowDark from "../assets/arrow_dark.svg";
+import ArrowDark from "../assets/arrow_dark.svg";
 import Star from "../assets/star.svg";
 import Play from "../assets/play.svg";
 import Button from "./Button";
 
-const Home = () => {
+// Interface
+interface HomePropsI {
+  darkMode: boolean;
+}
+
+const Home = ({ darkMode }: HomePropsI) => {
   return (
     <main className="flex items-center justify-center">
       <div className=" w-[540px] relative">
@@ -19,7 +24,7 @@ const Home = () => {
           {/* Mission Text */}
           <p className="text-[1.5rem]">
             Evolve your blockchain products with <br />
-            our amazing DAO infrastructure
+            our token creation infrastructure
           </p>
         </div>
         {/* Star */}
@@ -33,7 +38,7 @@ const Home = () => {
         <img
           className="absolute bottom-[7rem] right-[-2rem]"
           width={200}
-          src={ArrowLight}
+          src={darkMode ? ArrowDark : ArrowLight}
           alt="star"
         />
         {/* Buttons */}
@@ -47,7 +52,7 @@ const Home = () => {
       </div>
       {/* Hand */}
       <div>
-        <img width={690} src={HandLight} alt="hand" />
+        <img width={690} src={darkMode ? HandDark : HandLight} alt="hand" />
       </div>
     </main>
   );

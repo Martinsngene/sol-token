@@ -17,6 +17,7 @@ window.Buffer = buffer.Buffer;
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
+import Profile from "./components/Profile";
 
 function App() {
   // create types
@@ -60,6 +61,9 @@ function App() {
   const [createdTokenPublicKey, setCreatedTokenPublicKey] = useState<any>(null);
   const [mintingWalletSecretKey, setMintingWalletSecretKey] =
     useState<any>(null);
+
+  // Dark Mode
+  const [darkMode] = useState(false);
 
   const [supplyCapped, setSupplyCapped] = useState(false);
 
@@ -337,10 +341,35 @@ function App() {
     }
   };
 
+  console.log(provider);
+
   return (
-    <div className="font-mono">
-      <NavBar />
-      <Home />
+    <div
+      className={
+        darkMode
+          ? "font-mono text-white bg-[#231F1F]"
+          : "font-mono text-[#231F1F] bg-white"
+      }
+    >
+      {/* Navbar */}
+      <NavBar
+        walletConnectHelper={walletConnectionHelper}
+        isConnected={walletConnected}
+        provider={provider}
+      />
+      {/* Profile */}
+      {walletConnected ? (
+        <Profile
+          walletConnected={walletConnected}
+          provider={provider}
+          loading={loading}
+        />
+      ) : (
+        // Home Page
+        <>
+          <Home darkMode={darkMode} />
+        </>
+      )}
     </div>
   );
 }

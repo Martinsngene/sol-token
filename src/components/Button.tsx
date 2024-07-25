@@ -5,10 +5,16 @@ import "./styles.css";
 interface ButtonPropsI {
   children: React.ReactNode;
   className?: string;
+  onClick?: () => void;
+  disabled?: boolean;
 }
 
-const Button = ({ children, className }: ButtonPropsI) => {
-  return <button className={`${className}`}>{children}</button>;
+const Button = ({ children, className, onClick, disabled }: ButtonPropsI) => {
+  return (
+    <button className={`${className}`} onClick={onClick} disabled={disabled}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;

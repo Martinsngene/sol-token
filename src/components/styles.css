@@ -11,8 +11,9 @@
 /* Styles for button */
 .button {
   text-decoration: none;
-  width: 183px;
-  height: 56px;
+  /* width: 150px; */
+  /* height: 45px; */
+  padding: 0.3rem 0.5rem;
   background-color: #55c8ed;
   border: 1px solid black;
   text-align: center;
